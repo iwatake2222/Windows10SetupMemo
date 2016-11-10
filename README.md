@@ -161,7 +161,8 @@ import pyauto
 from keyhac import *
 
 def configure(keymap):
-    keymap.replaceKey( "RCtrl", 235 )
+    #keymap.replaceKey( "RCtrl", 235 ) # for JP keyboard
+    keymap.replaceKey( "CapsLock", 235 ) # for US keyboard
     keymap.defineModifier( 235, "User0" )
     keymap_global = keymap.defineWindowKeymap()
     keymap_global[ "U0-P" ] = "Up"
@@ -182,11 +183,11 @@ def configure(keymap):
     keymap_global[ "U0-M" ] = "PageDown"
     keymap_global[ "U0-O" ] = "PageUp"
     keymap_global[ "U0-RShift" ] = ""
-    keymap_global[ "U0-RShift-LShift" ] = "CapsLock"
+    #keymap_global[ "U0-RShift-LShift" ] = "CapsLock"
     keymap_global[ "LCtrl-Q" ] = "Alt-F4" 
     keymap_global[ "LCtrl-W" ] = "Ctrl-F4" 
     keymap_global[ "RWin-Enter" ] = "Alt-Enter"  
-    keymap_global[ "U0-Tab" ] = "CapsLock"
+    #keymap_global[ "U0-Tab" ] = "CapsLock"
     keymap_global[ "U0-BackSlash" ] = "Insert"
     keymap_global[ "U0-Space" ] = "Ctrl-Space"
 ```
