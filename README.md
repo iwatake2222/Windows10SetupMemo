@@ -5,6 +5,9 @@ Windows10SetupMemo
 - privacy policy
 - folder settings
 - icon size, start menu, no sound
+### IME (for US keyboard)
+- IMEバーで右クリック->プロパティ->詳細設定->全般タブ、編集操作、キー設定->変更
+- キー追加. Ctrl+Shift+SpaceをIME オン/オフへ割り当て
 
 # Applications to be installed
 - firefox
@@ -15,7 +18,6 @@ Windows10SetupMemo
 - vlc
 - media player classic
 - sublime
-    - package manager
 - sakura editor
     - ctag
 - winmerge
@@ -25,10 +27,89 @@ Windows10SetupMemo
 - sharpkeys
 - JpegAnalyzer
 - git
-    - user, ssh, winmerge
+    - user, ssh-keygen, winmerge
 - mingw
     - alias for text editors
+- Visual Studio Code
 
+# sublime text
+install package manager
+### packages to be installed
+- IMESupport
+- SimpleClone
+- OmniMarkupPreviewer
+- BracketHighlighter
+- ConvertToUTF8
+- CTags
+- Package Control
+- SublimeCodeIntel
+- Terminal
+- Theme - Flatland
+- TrailingSpaces
+
+### Key Bindings
+```
+[
+
+	{ "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} }, 
+
+	{ "keys": ["ctrl+shift+m"], "command": "toggle_record_macro" },
+	{ "keys": ["ctrl+m"], "command": "run_macro" },
+
+	{ "keys": ["ctrl+["], "command": "jump_back" },
+	{ "keys": ["ctrl+]"], "command": "jump_forward" },
+
+	{ "keys": ["ctrl+shift+up"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1]]
+		}
+	}
+]
+```
+- ctrl+shift+down -> split
+- ctrl+shift+up -> single
+
+### Settings
+```
+{
+	"always_show_minimap_viewport": false,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"default_encoding": "UTF-8",
+	"draw_minimap_border": true,
+	"draw_white_space": "all",
+	"fallback_encoding": "UTF-8",
+	"font_size": 10,
+	"highlight_line": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"match_brackets": true,
+	"open_files_in_new_window": true,
+	"remember_open_files": false,
+	"ruler":
+	[
+		0,
+		200
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"spacegray_sidebar_font_large": true,
+	"spacegray_sidebar_tree_large": true,
+	"spacegray_tabs_font_large": true,
+	"spacegray_tabs_large": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": false,
+	"update_check": false,
+	"word_wrap": true
+}
+```
 
 # msys
 ### .inputrc
@@ -62,11 +143,13 @@ alias sakura='"/c/Program Files (x86)/sakura/sakua.exe"'
     winmerge = mergetool -y -t WinMerge
 ```
 
+git difftool --dir-diff 
+
+
 # sharpkeys
 - Left Alt (00_38) -> Left Ctrl (00_1D)
 - Left Ctrl (00_1D) -> Left Alt (00_38)
 - Caps Lock (00_3A) -> Right Ctrl (E0_1D)  @only for JP keyboard
-- (add into startup)
 
 # keyhac
 ```
@@ -107,3 +190,4 @@ def configure(keymap):
     keymap_global[ "U0-BackSlash" ] = "Insert"
     keymap_global[ "U0-Space" ] = "Ctrl-Space"
 ```
+- (add into startup)
