@@ -5,6 +5,7 @@ Windows10SetupMemo
 - privacy policy
 - folder settings
 - icon size, start menu, no sound
+
 ### IME (for US keyboard)
 - IMEバーで右クリック->プロパティ->詳細設定->全般タブ、編集操作、キー設定->変更
 - キー追加. Ctrl+Shift+SpaceをIME オン/オフへ割り当て
@@ -149,7 +150,7 @@ git difftool --dir-diff
 # sharpkeys
 - Left Alt (00_38) -> Left Ctrl (00_1D)
 - Left Ctrl (00_1D) -> Left Alt (00_38)
-- Caps Lock (00_3A) -> Right Ctrl (E0_1D)  @only for JP keyboard
+- Caps Lock (00_3A) -> Scroll Lock (00_46)  @only for JP keyboard
 
 # keyhac
 ```
@@ -161,8 +162,9 @@ import pyauto
 from keyhac import *
 
 def configure(keymap):
+    keymap.replaceKey( "ScrollLock", 235 ) # for JP keyboard
     #keymap.replaceKey( "RCtrl", 235 ) # for JP keyboard
-    keymap.replaceKey( "CapsLock", 235 ) # for US keyboard
+    #keymap.replaceKey( "CapsLock", 235 ) # for US keyboard
     keymap.defineModifier( 235, "User0" )
     keymap_global = keymap.defineWindowKeymap()
     keymap_global[ "U0-P" ] = "Up"
@@ -182,13 +184,13 @@ def configure(keymap):
     keymap_global[ "U0-H" ] = "Back"
     keymap_global[ "U0-M" ] = "PageDown"
     keymap_global[ "U0-O" ] = "PageUp"
-    keymap_global[ "U0-RShift" ] = ""
+    #keymap_global[ "U0-RShift" ] = ""
     #keymap_global[ "U0-RShift-LShift" ] = "CapsLock"
     keymap_global[ "LCtrl-Q" ] = "Alt-F4" 
     keymap_global[ "LCtrl-W" ] = "Ctrl-F4" 
-    keymap_global[ "RWin-Enter" ] = "Alt-Enter"  
+    #keymap_global[ "RWin-Enter" ] = "Alt-Enter"
     #keymap_global[ "U0-Tab" ] = "CapsLock"
-    keymap_global[ "U0-BackSlash" ] = "Insert"
+    #keymap_global[ "U0-BackSlash" ] = "Insert"
     keymap_global[ "U0-Space" ] = "Ctrl-Space"
 ```
 - (add into startup)
